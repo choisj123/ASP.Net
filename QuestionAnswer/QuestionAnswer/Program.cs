@@ -8,6 +8,13 @@ namespace QuestionAnswer
 {
     class Program
     {
+        class Question
+        {
+            string QuestionText;
+            string[] Options;
+            int CorrectAnswer;
+
+        }
 
         static void Main(string[] args)
         {
