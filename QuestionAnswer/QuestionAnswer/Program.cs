@@ -24,7 +24,7 @@ namespace QuestionAnswer
                 {
                     QuestionText = "우리나라 최초의 국가는?",
                     Options = new string[] {"고구려", "조선", "고조선", "고려"},
-                    CorrectAnswer = 2
+                    CorrectAnswer = 3
                 },
 
                 new Question
@@ -99,19 +99,20 @@ namespace QuestionAnswer
             {
                 // 정답 카운트
                 int count = 0;
-
+                int a = 1;
 
                 Console.WriteLine("출제를 시작합니다!");
 
                 // 질문 리스트에서 꺼내기 
-                foreach(var question in questions)
+                foreach (var question in questions)
                 {
                     Console.WriteLine("====================================");
+                    Console.WriteLine("질문 " + a + "." + question.QuestionText);
+                    a++;
 
-                    // 질문 텍스트 + 보기 꺼내기
-                    for(int i = 0; i < question.Options.Length; i++)
+                    // 보기 꺼내기
+                    for (int i = 0; i < question.Options.Length; i++)
                     {
-                        Console.WriteLine("질문 " + i + "." + question.QuestionText);
                         Console.WriteLine($"{i + 1}) {question.Options[i]}");
                     }
 
@@ -119,39 +120,41 @@ namespace QuestionAnswer
 
                     // 유효성 검증
                     string answer = Console.ReadLine();
-                    int userAnswer;
-                    bool isNum = int.TryParse(answer, out userAnswer);
 
-                    if (isNum && userAnswer - 1 == question.CorrectAnswer)
+                    if (int.TryParse(answer, out int userAnswer) && userAnswer == question.CorrectAnswer)
                     {
+
+                        Console.WriteLine();
                         Console.WriteLine("정답입니다!");
+                        Console.WriteLine();
                         count++;
                     }
                     else
                     {
+                        Console.WriteLine();
                         Console.WriteLine("틀렸습니다.");
+                        Console.WriteLine();
                     }
-                    // 10문제가 출제 끝
+                    // 10문제 출제 끝
 
-                    float correctResult = ((float)count / questions.Count)*100;
-
-                    Console.WriteLine("총 " + questions.Count + "개의 문제 중에 " + count + "개의 문제를 맞추셨습니다. 정답률은 " + correctResult + "% 입니다.");
-
-                    Console.Write("퀴즈를 계속 푸시겠어요? (Y/N) >>> ");
-                    string continueInput = Console.ReadLine();
-
-
-                    }
 
                 }
 
+                float correctResult = ((float)count / questions.Count) * 100;
+
+                Console.WriteLine("총 " + questions.Count + "개의 문제 중에 " + count + "개의 문제를 맞추셨습니다. 정답률은 " + correctResult + "% 입니다.");
+
+                Console.WriteLine();
+                Console.Write("퀴즈를 계속 진행하시겠어요? (Y/N) >>> ");
+                string continueInput = Console.ReadLine();
+
+                continueQuiz = continueInput.Equals("Y") || continueInput.Equals("y");
+                Console.WriteLine();
+
             }
 
-
-
-
-
-
         }
+
     }
+    
 }
