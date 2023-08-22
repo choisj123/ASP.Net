@@ -99,21 +99,23 @@ namespace QuestionAnswer
             {
                 // 정답 카운트
                 int count = 0;
-                int a = 1;
 
                 Console.WriteLine("출제를 시작합니다!");
 
-                // 질문 리스트에서 꺼내기 
-                foreach (var question in questions)
+                // 질문 리스트에서 꺼내기
+                while (true)
                 {
+                    int randomIndex = random.Next(questions.Count);
+                    Question selectedQuestion = questions[randomIndex];
+
+
                     Console.WriteLine("====================================");
-                    Console.WriteLine("질문 " + a + "." + question.QuestionText);
-                    a++;
+                    Console.WriteLine(selectedQuestion.QuestionText);
 
                     // 보기 꺼내기
-                    for (int i = 0; i < question.Options.Length; i++)
+                    for (int i = 0; i < selectedQuestion.Options.Length; i++)
                     {
-                        Console.WriteLine($"{i + 1}) {question.Options[i]}");
+                        Console.WriteLine($"{i + 1}) {selectedQuestion.Options[i]}");
                     }
 
                     Console.Write("정답을 입력하세요 >>> ");
@@ -121,7 +123,7 @@ namespace QuestionAnswer
                     // 유효성 검증
                     string answer = Console.ReadLine();
 
-                    if (int.TryParse(answer, out int userAnswer) && userAnswer == question.CorrectAnswer)
+                    if (int.TryParse(answer, out int userAnswer) && userAnswer == selectedQuestion.CorrectAnswer)
                     {
 
                         Console.WriteLine();
@@ -136,22 +138,23 @@ namespace QuestionAnswer
                         Console.WriteLine();
                     }
                     // 10문제 출제 끝
-
-
                 }
 
                 float correctResult = ((float)count / questions.Count) * 100;
 
-                Console.WriteLine("총 " + questions.Count + "개의 문제 중에 " + count + "개의 문제를 맞추셨습니다. 정답률은 " + correctResult + "% 입니다.");
+                    Console.WriteLine("총 " + questions.Count + "개의 문제 중에 " + count + "개의 문제를 맞추셨습니다. 정답률은 " + correctResult + "% 입니다.");
 
-                Console.WriteLine();
-                Console.Write("퀴즈를 계속 진행하시겠어요? (Y/N) >>> ");
-                string continueInput = Console.ReadLine();
+                    Console.WriteLine();
+                    Console.Write("퀴즈를 계속 진행하시겠어요? (Y/N) >>> ");
+                    string continueInput = Console.ReadLine();
 
-                continueQuiz = continueInput.Equals("Y") || continueInput.Equals("y");
-                Console.WriteLine();
+                    if (continueInput.Equals("Y") || continueInput.Equals("y")) continueQuiz = true;
+                    else continueQuiz = false;
 
-            }
+                    Console.WriteLine();
+
+             }
+           
 
         }
 
