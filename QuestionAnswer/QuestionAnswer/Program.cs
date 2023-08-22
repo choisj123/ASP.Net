@@ -120,7 +120,7 @@ namespace QuestionAnswer
                         Console.WriteLine($"{i + 1}) {selecteQuestion.Options[i]}");
                     }
 
-                    Console.Write("정답을 입력하세요 >>> ");
+                    Console.Write("정답을 입력하세요 *번호만* >>> ");
 
                     // 유효성 검증
                     string answer = Console.ReadLine();
@@ -128,32 +128,26 @@ namespace QuestionAnswer
                     if (int.TryParse(answer, out int userAnswer) && userAnswer == selecteQuestion.CorrectAnswer)
                     {
 
-                        Console.WriteLine();
-                        Console.WriteLine("정답입니다!");
-                        Console.WriteLine();
+                        Console.WriteLine("\n정답입니다!\n");
                         count++;
                     }
                     else
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("틀렸습니다.");
-                        Console.WriteLine();
+                        Console.WriteLine("\n틀렸습니다.\n");
                     }
                     // 10문제 출제 끝
                 }
 
                 float correctResult = ((float)count / questions.Count) * 100;
 
-                    Console.WriteLine("총 " + questions.Count + "개의 문제 중에 " + count + "개의 문제를 맞추셨습니다. 정답률은 " + correctResult + "% 입니다.");
+                Console.WriteLine("총 " + questions.Count + "개의 문제 중에 " + count + "개의 문제를 맞추셨습니다. 정답률은 " + correctResult + "% 입니다.\n");
+                Console.Write("퀴즈를 계속 진행하시겠어요? (Y/N) >>> ");
 
-                    Console.WriteLine();
-                    Console.Write("퀴즈를 계속 진행하시겠어요? (Y/N) >>> ");
-                    string continueInput = Console.ReadLine();
+                string continueInput = Console.ReadLine();
+                if (continueInput.Equals("Y") || continueInput.Equals("y")) continueQuiz = true;
+                else continueQuiz = false;
 
-                    if (continueInput.Equals("Y") || continueInput.Equals("y")) continueQuiz = true;
-                    else continueQuiz = false;
-
-                    Console.WriteLine();
+                Console.WriteLine();
 
              }
            
