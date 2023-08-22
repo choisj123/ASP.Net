@@ -103,19 +103,21 @@ namespace QuestionAnswer
                 Console.WriteLine("출제를 시작합니다!");
 
                 // 질문 리스트에서 꺼내기
-                while (true)
-                {
-                    int randomIndex = random.Next(questions.Count);
-                    Question selectedQuestion = questions[randomIndex];
+                List<Question> remainQuestions = new List<Question>(questions);
 
+                while (remainQuestions.Count > 0)
+                {
+                    int randomIndex = random.Next(remainQuestions.Count);
+                    Question selecteQuestion = remainQuestions[randomIndex];
+                    remainQuestions.RemoveAt(randomIndex);
 
                     Console.WriteLine("====================================");
-                    Console.WriteLine(selectedQuestion.QuestionText);
+                    Console.WriteLine(selecteQuestion.QuestionText);
 
                     // 보기 꺼내기
-                    for (int i = 0; i < selectedQuestion.Options.Length; i++)
+                    for (int i = 0; i < selecteQuestion.Options.Length; i++)
                     {
-                        Console.WriteLine($"{i + 1}) {selectedQuestion.Options[i]}");
+                        Console.WriteLine($"{i + 1}) {selecteQuestion.Options[i]}");
                     }
 
                     Console.Write("정답을 입력하세요 >>> ");
@@ -123,7 +125,7 @@ namespace QuestionAnswer
                     // 유효성 검증
                     string answer = Console.ReadLine();
 
-                    if (int.TryParse(answer, out int userAnswer) && userAnswer == selectedQuestion.CorrectAnswer)
+                    if (int.TryParse(answer, out int userAnswer) && userAnswer == selecteQuestion.CorrectAnswer)
                     {
 
                         Console.WriteLine();
