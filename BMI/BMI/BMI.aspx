@@ -22,7 +22,7 @@
                 <td><input id="Weight" type="text" runat="server"/></td>
                 <td>kg</td>
             </tr>
-            <tr align="center">
+            <tr style="text-align:center;">
                 <td colspan="3">
                     <input id="Calc" type="submit"  value="산출하기" onserverclick="Calc_ServerClick" runat="server"/>
                 </td>
@@ -31,7 +31,7 @@
         <p id="Result" runat="server"></p>
 
         <br />
-
+        
         <p id="info" runat="server"></p>
     </form>
 </body>

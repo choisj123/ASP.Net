@@ -54,6 +54,9 @@
                         <li><a runat="server" href="~/">홈</a></li>
                         <li><a runat="server" href="~/About">정보</a></li>
                         <li><a runat="server" href="~/Contact">연락처</a></li>
+                        <li><a runat="server" href="~/BMI">BMI</a></li>
+                        <li><a runat="server" href="~/CoffeeRecipe">CoffeeRecipe</a></li>
+
                     </ul>
                 </div>
             </div>

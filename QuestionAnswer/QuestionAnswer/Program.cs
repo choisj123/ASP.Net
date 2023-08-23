@@ -108,52 +108,72 @@ namespace QuestionAnswer
                 while (remainQuestions.Count > 0)
                 {
                     int randomIndex = random.Next(remainQuestions.Count);
-                    Question selecteQuestion = remainQuestions[randomIndex];
+                    Question selectQuestion = remainQuestions[randomIndex];
                     remainQuestions.RemoveAt(randomIndex);
 
                     Console.WriteLine("====================================");
-                    Console.WriteLine(selecteQuestion.QuestionText);
+                    Console.WriteLine(selectQuestion.QuestionText);
 
                     // 보기 꺼내기
-                    for (int i = 0; i < selecteQuestion.Options.Length; i++)
+                    for (int i = 0; i < selectQuestion.Options.Length; i++)
                     {
-                        Console.WriteLine($"{i + 1}) {selecteQuestion.Options[i]}");
+                        Console.WriteLine($"{i + 1}) {selectQuestion.Options[i]}");
                     }
 
-                    Console.Write("정답을 입력하세요 *번호만* >>> ");
+                    Console.Write("정답을 입력하세요 (번호만) >>> ");
 
-                    // 유효성 검증
                     string answer = Console.ReadLine();
 
-                    if (int.TryParse(answer, out int userAnswer) && userAnswer == selecteQuestion.CorrectAnswer)
+                    // 숫자 입력 유효성 
+                    if (int.TryParse(answer, out int userAnswer))
                     {
-
-                        Console.WriteLine("\n정답입니다!\n");
-                        count++;
+                        // 정답 검증
+                        if (userAnswer == selectQuestion.CorrectAnswer)
+                        {
+                            Console.WriteLine("\n정답입니다!\n");
+                            count++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("\n틀렸습니다.\n");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("\n틀렸습니다.\n");
+                        Console.WriteLine("\n숫자만 입력해주세요.\n");
                     }
+
                     // 10문제 출제 끝
                 }
 
                 float correctResult = ((float)count / questions.Count) * 100;
 
                 Console.WriteLine("총 " + questions.Count + "개의 문제 중에 " + count + "개의 문제를 맞추셨습니다. 정답률은 " + correctResult + "% 입니다.\n");
-                Console.Write("퀴즈를 계속 진행하시겠어요? (Y/N) >>> ");
 
-                string continueInput = Console.ReadLine();
-                if (continueInput.Equals("Y") || continueInput.Equals("y")) continueQuiz = true;
-                else continueQuiz = false;
+                while (true)
+                {
+                    Console.Write("퀴즈를 계속 진행하시겠어요? (Y/N) >>> ");
 
-                Console.WriteLine();
+                    string continueInput = Console.ReadLine();
 
+                    if (continueInput == "Y" || continueInput == "y")
+                    {
+                        continueQuiz = true;
+                        break;
+                    }
+                    else if (continueInput == "N" || continueInput == "n")
+                    {
+                        continueQuiz = false;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nY 또는 N만 입력해주세요.\n");
+                        continue;
+                    }
+
+                }
              }
-           
-
         }
-
     }
-    
 }

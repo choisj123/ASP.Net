@@ -10,42 +10,60 @@
 namespace BMI {
     
     
-    public partial class WebForm1 {
+    public partial class ButtonExam {
         
         /// <summary>
-        /// CoffeeForm 컨트롤입니다.
+        /// form1 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm CoffeeForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// CoffeeType 컨트롤입니다.
+        /// btnSortAscending 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect CoffeeType;
+        protected global::System.Web.UI.WebControls.Button btnSortAscending;
         
         /// <summary>
-        /// ShowRecipe 컨트롤입니다.
+        /// btnSortDescending 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputSubmit ShowRecipe;
+        protected global::System.Web.UI.WebControls.Button btnSortDescending;
         
         /// <summary>
-        /// info 컨트롤입니다.
+        /// lbtnGoHanbit 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl info;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnGoHanbit;
+        
+        /// <summary>
+        /// ibtnHanbit 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ibtnHanbit;
+        
+        /// <summary>
+        /// lblMessage 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }

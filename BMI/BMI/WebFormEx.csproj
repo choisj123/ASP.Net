@@ -106,7 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Data\3.txt" />
+    <Content Include="App_Data\2.txt" />
+    <Content Include="App_Data\0.txt" />
+    <Content Include="App_Data\1.txt" />
     <Content Include="BMI.aspx" />
+    <Content Include="ButtonExam.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -125,7 +130,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="CoffeeRecipe.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="images\IMG_1666-edited-768x768.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -177,6 +184,13 @@
     <Compile Include="BMI.aspx.designer.cs">
       <DependentUpon>BMI.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ButtonExam.aspx.cs">
+      <DependentUpon>ButtonExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ButtonExam.aspx.designer.cs">
+      <DependentUpon>ButtonExam.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -216,10 +230,15 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="CoffeeRecipe.aspx.cs">
+      <DependentUpon>CoffeeRecipe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CoffeeRecipe.aspx.designer.cs">
+      <DependentUpon>CoffeeRecipe.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
