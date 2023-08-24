@@ -120,6 +120,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="FileSearch.aspx" />
+    <Content Include="FileSearchResult.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -205,6 +207,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileSearch.aspx.cs">
+      <DependentUpon>FileSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileSearch.aspx.designer.cs">
+      <DependentUpon>FileSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileSearchResult.aspx.cs">
+      <DependentUpon>FileSearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileSearchResult.aspx.designer.cs">
+      <DependentUpon>FileSearchResult.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
